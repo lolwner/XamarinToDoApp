@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinToDoApp.Android", "X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinToDoApp.iOS", "XamarinToDoApp\XamarinToDoApp.iOS\XamarinToDoApp.iOS.csproj", "{4D071294-B901-4F68-807E-AABB114D3956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinToDoApp", "XamarinToDoApp\XamarinToDoApp\XamarinToDoApp.csproj", "{DFBE7516-3293-4F69-BE47-194C2BB24B39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinToDoApp.Core", "XamarinToDoApp\XamarinToDoApp\XamarinToDoApp.Core.csproj", "{DFBE7516-3293-4F69-BE47-194C2BB24B39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
