@@ -1,42 +1,42 @@
-﻿using Android.App;
-using Android.Widget;
+﻿using System;
+using Android.App;
+using Android.Content.PM;
 using Android.OS;
-using System;
+using Android.Support.V4.View;
+using Android.Support.V4.Widget;
 using Android.Views;
-using MvvmCross.Droid.Views;
-using MvvmCross.Binding.Droid.Views;
-using MvvmCross.Binding.Droid.BindingContext;
+using Android.Views.InputMethods;
+using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Droid.Views.Attributes;
 using XamarinToDoApp.Core.ViewModels;
-using XamarinToDoApp.Droid.Adapters;
 
 namespace XamarinToDoApp.Droid
-{
-    [Activity(Label = "XamarinToDoApp", MainLauncher = true)]
-    public class MainActivity : MvxActivity<MainViewModel>
+{  
+    [MvxActivityPresentation]
+    [Activity(Label = "MainView", Theme = "@style/AppTheme", MainLauncher = true)]
+    public class MainView : MvxAppCompatActivity<MainViewModel>
     {
-       
+        public DrawerLayout DrawerLayout { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.MainView);
 
             //Button button1 = FindViewById<Button>(Resource.Id.button1);
             //button1.Click += Button1_Click;
-            var listView = FindViewById<MvxListView>(Resource.Id.listView);
-            listView.Adapter = new BaseListAdapter(this, (IMvxAndroidBindingContext)BindingContext);
+
+            if (savedInstanceState == null)
+            {
+                ViewModel.ShowFragment();
+            }
+
         }
 
-        //protected override void OnListItemClick(ListView l, View v, int position, long id)
+        //private void Button1_Click(object sender, EventArgs e)
         //{
-        //    var t = items[position];
-        //    Android.Widget.Toast.MakeText(this, t, Android.Widget.ToastLength.Short).Show();
+        //    SetContentView(Resource.Layout.ToDoList);
         //}
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            SetContentView(Resource.Layout.ToDoList);
-        }
     }
 }
 

@@ -1,9 +1,11 @@
 using Android.App;
 using Android.Content.PM;
 using MvvmCross.Droid.Views;
+using MvvmCross.Droid.Views.Attributes;
 
 namespace XamarinToDoApp.Droid
 {
+    [MvxActivityPresentation]
     [Activity(
         Label = "XamarinToDoApp.Droid"
         , MainLauncher = true
