@@ -3,15 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using XamarinToDoApp.Core.Interfaces;
 using XamarinToDoApp.Core.Models;
 
 namespace XamarinToDoApp.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        public MainViewModel()
+        readonly ITaskService _taskService;
+
+        public MainViewModel(ITaskService taskService)
         {
-           
+            _taskService = taskService;
         }
 
         public void ShowFragment()
